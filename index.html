@@ -64,7 +64,7 @@
     </div>
 <!-- Rules for the game -->
     <div id="rules">
-        <p>Rules are simple! Your guess range will be from 1-20. You are going to input your number guess. If you guess wrong, you will be notified. If you guess right. you will also be notified.</p>
+        <p>Rules are simple! Your guess range will be from 1-10. You are going to input your number guess. If you guess wrong, you will be notified. If you guess right. you will also be notified.</p>
     </div>
     <hr>
 <!-- Create a button to start a new game -->
@@ -84,7 +84,7 @@
 
 <!-- Script -->
     <script>
-        scrtNum = Math.round(Math.random()*20+1);
+        scrtNum = Math.round(Math.random()*10+1);
         guessButton = document.getElementById("btn");
         newGame = document.getElementById("again");
         notify = document.getElementById("notify");
