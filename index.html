@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number!</title>
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-image: url("background.jpg");
+            font-family: 'Press Start 2P', cursive;
+        }
+        #title{
+            color:white;
+            text-shadow:purple 2px 2px;
+            text-align: center;
+            padding-top:20px;
+        }
+        #rules{
+            color:white;
+            text-shadow:blue 2px 2px;
+            text-align:center;
+        }
+        #guess{
+            margin-top:80px;
+            margin-left:200px;
+            text-align: center;
+        }
+        #player{
+            text-align: center;
+            background-color: rgb(70, 111, 173);
+            text-shadow:white 1px 1px;
+            width:600px;
+            height:200px;
+            font-size:100px;
+            font-family: 'Press Start 2P', cursive;
+        }
+        #notify{
+            text-align:center;
+            text-shadow:white 1px 1px;
+        }
+        #btn{
+            width:200px;
+            height:100px;
+            background-color:red;
+            font-family: 'Press Start 2P', cursive;
+        }
+        #again{
+            width:100px;
+            height:50px;
+            background-color: yellow;
+            font-family: 'Press Start 2P', cursive;
+        }
+    </style>
+</head>
+<body>
+<!-- Title -->
+    <div id="title">
+        <h1>Guess The Number!</h1>
+    </div>
+<!-- Rules for the game -->
+    <div id="rules">
+        <p>Rules are simple! Your guess range will be from 1-10. You are going to input your number guess. If you guess wrong, you will be notified. If you guess right. you will also be notified.</p>
+    </div>
+    <hr>
+<!-- Create a button to start a new game -->
+    <button id="again">NEW GAME</button>
+<!-- This will create the text to notify the user if the number is right or wrong -->
+    <div id="notify"></div>
+<!-- Input for the game -->
+    <div id="guess">
+        <input type="number" id="player"></input>
+        <!-- Button -->
+        <button id="btn">Check</button>
+    </div>
+<!-- Score Tracker -->
+    <div id="scoretracker">
+        <div id="crntScore"></id>
+    </div>
+
+<!-- Script -->
+    <script>
+        scrtNum = Math.round(Math.random()*10+1);
+        guessButton = document.getElementById("btn");
+        newGame = document.getElementById("again");
+        notify = document.getElementById("notify");
+
+        guessButton.addEventListener('click', checkNumber)
+        newGame.addEventListener('click', refresh)
+        console.log(scrtNum)
+
+        function checkNumber(){
+            if (Number(document.getElementById("player").value)===scrtNum){
+                notify.innerHTML="Good Job! That is Correct!"
+            }
+            else{
+                notify.innerHTML="Nope! Please try again!"
+            }
+        }
+
+        function refresh(){
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>
